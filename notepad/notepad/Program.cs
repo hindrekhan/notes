@@ -95,24 +95,19 @@ namespace notepad
 
                 string userInput = Console.ReadLine();
 
-                if (userInput == "1")
+                switch(userInput)
                 {
-                    ListNotes();
-                }
-
-                else if (userInput == "2")
-                {
-                    WriteNote();
-                }
-
-                else if (userInput == "3")
-                {
-                    break;
-                }
-
-                else
-                {
-                    Console.Clear();
+                    case "1":
+                        ListNotes();
+                        break;
+                    case "2":
+                        WriteNote();
+                        break;
+                    case "3":
+                        return;
+                    default:
+                        Console.WriteLine("Tundmatu käsk");
+                        break;
                 }
 
             }
