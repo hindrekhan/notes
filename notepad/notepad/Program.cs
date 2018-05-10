@@ -22,9 +22,7 @@ namespace notepad
             {
                 XmlWriter xmlWriter = XmlWriter.Create("notes.xml");
                 xmlWriter.WriteStartDocument();
-
                 xmlWriter.WriteStartElement("notes");
-
                 xmlWriter.Close();
             }
         }
@@ -48,13 +46,10 @@ namespace notepad
 
             int userOption = Int32.Parse(Console.ReadLine());
 
-            if (!(userOption > 0 && userOption <= rootNode.ChildNodes.Count))
-            {
-                Console.Clear();
-                return;
-            }
-
             Console.Clear();
+
+            if (!(userOption > 0 && userOption <= rootNode.ChildNodes.Count))
+                return;
 
             Console.WriteLine(rootNode.ChildNodes[userOption - 1].Attributes["text"].Value);
             Console.WriteLine();
@@ -109,7 +104,6 @@ namespace notepad
                         Console.WriteLine("Tundmatu käsk");
                         break;
                 }
-
             }
         }
     }
